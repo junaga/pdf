@@ -2,28 +2,28 @@
 
 Online Print Service https://www.repro-online.de/de/plakatdruck does not accept our PDF documents.
 
-- BI-BHF-SMC_GR_zusammengefügt.pdf
-- Holz.xlsx
+- `BI-BHF-SMC_GR_zusammengefügt.pdf`
+- `Holz.xlsx`
 
-We use PDF24 to split them per page, and then convert them to PDF/A.
+We use PDF24 to split them per page, and then convert them to `PDF/A`.
 
 - https://tools.pdf24.org/split-pdf
 - https://tools.pdf24.org/pdf-to-pdfa
 
 ## `PDF/A` to the rescue
 
-then we check those ./pdfa/* files for actual PDF/A compliance. to see that there is no more PDF nonsense in them. we do this with Open Source https://verapdf.org/software/
+then we check those ./out/* files for actual `PDF/A` compliance. to see that there is no more PDF nonsense in them. we do this with Open Source https://verapdf.org/software/
 
 ```
-verapdf --flavour 2b --format text ./pdfa/Architekt.pdf
-verapdf --flavour 2b --format text ./pdfa/split/1.pdf
-verapdf --flavour 2b --format text ./pdfa/split/2.pdf
-verapdf --flavour 2b --format text ./pdfa/split/3.pdf
-verapdf --flavour 2b --format text ./pdfa/split/4.pdf
-verapdf --flavour 2b --format text ./pdfa/split/5.pdf
-verapdf --flavour 2b --format text ./pdfa/split/6.pdf
-verapdf --flavour 2b --format text ./pdfa/split/7.pdf
-verapdf --flavour 2b --format text ./pdfa/split/8.pdf
+verapdf --flavour 2b --format text ./out/Architekt.pdf
+verapdf --flavour 2b --format text ./out/split/1.pdf
+verapdf --flavour 2b --format text ./out/split/2.pdf
+verapdf --flavour 2b --format text ./out/split/3.pdf
+verapdf --flavour 2b --format text ./out/split/4.pdf
+verapdf --flavour 2b --format text ./out/split/5.pdf
+verapdf --flavour 2b --format text ./out/split/6.pdf
+verapdf --flavour 2b --format text ./out/split/7.pdf
+verapdf --flavour 2b --format text ./out/split/8.pdf
 ```
 
 | PDF/A | year  | Base     | Limits                                                                                            | Conformance |
