@@ -1,0 +1,64 @@
+;;
+;; Domain:     stanew.name.
+;; Exported:   2025-08-25 06:43:48
+;;
+;; This file is intended for use for informational and archival
+;; purposes ONLY and MUST be edited before use on a production
+;; DNS server.  In particular, you must:
+;;   -- update the SOA record with the correct authoritative name server
+;;   -- update the SOA record with the contact e-mail address information
+;;   -- update the NS record(s) with the authoritative name servers for this domain.
+;;
+;; For further information, please consult the BIND documentation
+;; located on the following website:
+;;
+;; http://www.isc.org/
+;;
+;; And RFC 1035:
+;;
+;; http://www.ietf.org/rfc/rfc1035.txt
+;;
+;; Please note that we do NOT offer technical support for any use
+;; of this zone data, the BIND name server, or any other third-party
+;; DNS software.
+;;
+;; Use at your own risk.
+;; SOA Record
+stanew.name	3600	IN	SOA	rajeev.ns.cloudflare.com. dns.cloudflare.com. 2050777082 10000 2400 604800 3600
+
+;; NS Records
+stanew.name.	86400	IN	NS	rajeev.ns.cloudflare.com.
+stanew.name.	86400	IN	NS	sara.ns.cloudflare.com.
+
+;; A Records
+host.stanew.name.	300	IN	A	142.132.230.251 ; cf_tags=cf-proxied:false
+
+;; AAAA Records
+host.stanew.name.	300	IN	AAAA	2a01:4f8:c17:7b0c::1 ; cf_tags=cf-proxied:false
+
+;; CAA Records
+stanew.name.	300	IN	CAA	0 issue "letsencrypt.org"
+
+;; CNAME Records
+mta-sts.stanew.name.	1	IN	CNAME	host.stanew.name. ; cf_tags=cf-proxied:false
+
+;; MX Records
+stanew.name.	300	IN	MX	10 host.stanew.name.
+
+;; SRV Records
+_imaps._tcp.stanew.name.	300	IN	SRV	0 1 993 host.stanew.name.
+_imap._tcp.stanew.name.	300	IN	SRV	0 0 0 .
+_pop3s._tcp.stanew.name.	300	IN	SRV	0 0 0 .
+_pop3._tcp.stanew.name.	300	IN	SRV	0 0 0 .
+_submissions._tcp.stanew.name.	300	IN	SRV	0 1 465 host.stanew.name.
+_submission._tcp.stanew.name.	300	IN	SRV	0 0 0 .
+
+;; TXT Records
+2025a._domainkey.stanew.name.	300	IN	TXT	"v=DKIM1;h=sha256;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqJd+EMVUzjd/eeaAu+xHXtPwJsm7tA1EKdxWm" "9y5mBP0Ol2gLjl+zd3Vc1CypTHt/Ew8CIyeHcjf6ldapxvB/mLFTgH0dm5SxfLjU7XnLzZtdoWaHtFVWh98XbK5xzwXO8CUwVush" "Y9oarrfTu6LHqKmukzCvvW57LdGsjqoLe/g+R/qJB2HpJSRPyDOTtDU5M7TkghJxmYZtcqwdGnxQrzM/dzECXM+XRgQ+P3Lk+45S" "Ty6GUp5nQ6noQdVBrTA5sG/ObLfebe4IOj+nyfv0+sNPSiUl8SnJKJHdHAHvL/mN1zhBq7mvhODMyRTLurgJLkbSHJCfwvGWXN0q" "lblaQIDAQAB"
+2025b._domainkey.stanew.name.	300	IN	TXT	"v=DKIM1;h=sha256;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4Wc34ztuvEwsk6Bs4kC09bBw8Cf13epam93cT" "rUENE2YeWgqrIolHfFBc7lpp27uFmj+YjHSfBmxMX+IOKhfCGba+SM9JcGjHcp6FurFqhW3rkto+ELmvputOGkVLXKUT5xg9CUZm" "5QO9jZ4FP678+ShW9sfyewBjNwogiqvyNwzdGDFCL4DL/KEQGCqZS+DMJS9opl3FtlmsHPS1Irx7Mc8tlUxevSmzHydhI9SfbezF" "35VvjvQt6sJOLBQ3Vr5uRtXs3h5l3WLpPSDWgxF9EP/BR1EyOrjGFSHIXsrAeeF4+YUN3osnkIgZmHgoUB7LkAyOQe1OMw0mZlj0" "hrV6wIDAQAB"
+_dmarc.stanew.name.	300	IN	TXT	"v=DMARC1;p=reject;rua=mailto:dmarcreports@stanew.name!10m"
+host.stanew.name.	300	IN	TXT	"v=spf1 a -all"
+_mta-sts.stanew.name.	300	IN	TXT	"v=STSv1; id=20250825T034446"
+_smtp._tls.host.stanew.name.	300	IN	TXT	"v=TLSRPTv1; rua=mailto:tlsreports@host.stanew.name"
+_smtp._tls.stanew.name.	300	IN	TXT	"v=TLSRPTv1; rua=mailto:tlsreports@stanew.name"
+stanew.name.	300	IN	TXT	"v=spf1 ip4:142.132.230.251 ip6:2a01:4f8:c17:7b0c::1 mx ~all"

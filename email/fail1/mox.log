@@ -1,0 +1,35 @@
+(output is also written to quickstart.log)
+
+Checking if DNS resolvers are DNSSEC-verifying... OK
+Looking up IPs for hostname host.stanew.name...
+
+NOTE: It looks like the DNS records of your domain (zone) are not DNSSEC-signed.
+Mail servers that send email to your domain, or receive email from your domain,
+cannot verify that the MX/SPF/DKIM/DMARC/MTA-STS records they receive are
+authentic. DANE, for authenticated delivery without relying on a pool of
+certificate authorities, requires DNSSEC, so will not be configured at this
+time.
+Recommended action: Continue now, but consider enabling DNSSEC for your domain
+later at your DNS operator, and adding DANE records for protecting incoming
+messages over SMTP.
+
+Checking if outgoing smtp connections can be made by connecting to gmail.com mx on port 25... OK
+
+Checking if domain stanew.name was registered recently... 2 days (recent!)
+WARNING: Mail servers may treat messages coming from recently registered domains
+(in the order of weeks to months) with suspicion, with higher probability of
+messages being classified as junk.
+
+Checking whether host name IPs are listed in popular DNS block lists...
+WARNING: checking your public IP 2a01:4f8:c17:7b0c::1 in DNS block list sbl.spamhaus.org: fail Error: open resolver; https://check.spamhaus.org/returnc/pub/2a01:4f8:0:a104::add:1d/
+WARNING: checking your public IP 142.132.230.251 in DNS block list sbl.spamhaus.org: fail Error: open resolver; https://check.spamhaus.org/returnc/pub/2a01:4f8:0:a231::add:2c/
+Other mail servers are likely to reject email from IPs that are in a blocklist.
+If all your IPs are in block lists, you will encounter problems delivering
+email. Your IP may be in block lists only temporarily. To see if your IPs are
+listed in more DNS block lists, visit:
+
+- https://multirbl.valli.org/lookup/2a01:4f8:c17:7b0c::1.html
+- https://multirbl.valli.org/lookup/142.132.230.251.html
+
+
+creating file "config/adminpasswd": open config/adminpasswd: file exists

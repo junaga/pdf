@@ -1,0 +1,4 @@
+use a Dovecot-based stack. Dovecot can expose a true “All Mail” (`\All`) mailbox by combining two features (supported for years): the virtual plugin (to aggregate all folders into one view) and the imap_special_use plugin (to advertise it as `\All` to IMAP clients). Stacks like `Mailcow`, `Mailu`, `docker-mailserver`, `Modoboa`, and many “one-box mail server” distros all use Dovecot under the hood, so you can get this behavior.
+
+- mox supports SPECIAL-USE, but its config only knows these keys: Sent, Archive, Trash, Draft, Junk. There’s no All, and “Drafts” (plural) isn’t a valid key—hence your “unknown key” errors.
+- In IMAP, `\All` is defined in [RFC 6154](https://www.rfc-editor.org/rfc/rfc6154.html) as a virtual mailbox that shows everything; servers may support only a subset and are allowed to reject unsupported use-attributes. mox simply doesn’t expose `\All` in its config today.
